@@ -275,7 +275,7 @@
         </repository>
 
         <repository>
-            <snapshots />
+            <snapshots/>
             <id>snapshots</id>
             <name>oss-jfrog-artifactory-snapshots</name>
             <url>https://oss.jfrog.org/artifactory/oss-snapshot-local</url>
@@ -642,17 +642,11 @@
                                 <!-- BugzID:1827 - Added template file that gets copied when
                                      we do a build so we don't get accidental properties file
                                      commits. -->
-                                <copy file="src/main/resources/org/datavyu/resources/Build_Template.properties"
-                                      tofile="src/main/resources/org/datavyu/resources/Build.properties"/>
+                                <copy file="src/main/resources/org/datavyu/resources/Build_Template.properties" tofile="src/main/resources/org/datavyu/resources/Build.properties"/>
 
-                                <taskdef
-                                        name="replaceregexp"
-                                        classname="org.apache.tools.ant.taskdefs.optional.ReplaceRegExp"/>
+                                <taskdef name="replaceregexp" classname="org.apache.tools.ant.taskdefs.optional.ReplaceRegExp"/>
 
-                                <replaceregexp
-                                        file="src/main/resources/org/datavyu/resources/Build.properties"
-                                        match="Application.build =(.*)"
-                                        replace="Application.build = b:${buildNumber}"/>
+                                <replaceregexp file="src/main/resources/org/datavyu/resources/Build.properties" match="Application.build =(.*)" replace="Application.build = b:${buildNumber}"/>
 
                                 <!-- BugzID:304 - Create output directory for DMG. -->
                                 <mkdir dir="${project.build.directory}/site/snapshots/"/>
@@ -670,13 +664,8 @@
                         </goals>
                         <configuration>
                             <target>
-                                <taskdef
-                                        name="replaceregexp"
-                                        classname="org.apache.tools.ant.taskdefs.optional.ReplaceRegExp"/>
-                                <replaceregexp
-                                        file="src/main/resources/org/datavyu/resources/Datavyu.properties"
-                                        match="Application.build =(.*)"
-                                        replace="Application.build = b:none"/>
+                                <taskdef name="replaceregexp" classname="org.apache.tools.ant.taskdefs.optional.ReplaceRegExp"/>
+                                <replaceregexp file="src/main/resources/org/datavyu/resources/Datavyu.properties" match="Application.build =(.*)" replace="Application.build = b:none"/>
                             </target>
                         </configuration>
                     </execution>
@@ -903,7 +892,7 @@
                  (identical to) version x.y.1, x.y.2, etc. -->
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
-            <version>2.9.9</version>
+            <version>2.16.1</version>
         </dependency>
 
         <dependency>
